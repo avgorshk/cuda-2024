@@ -4,8 +4,8 @@
 
 #include <vector>
 
-std::vector<float> BlockGemmOMP(const std::vector<float>& matrixA,
-    const std::vector<float>& matrixB,
-    int dimension);
+std::vector<float> BlockGemmOMP(const std::vector<float>& mxA,
+    const std::vector<float>& mxB,
+    int src);
 
 #endif // __BLOCK_GEMM_OMP_H
