@@ -1097,8 +1097,8 @@ std::vector<float> GeluOCL(const std::vector<float>& input) {
 |3821B1PE1|kudinov_nikita|0.1532|
 |3821B1FI1|borovkov_sergey|0.1543|
 |3821B1FI2|kostin_artem|0.1549|
-|3821B1FI3|safarov_nurlan|0.1550|
 |3821B1PE1|fedotov_kirill|0.1550|
+|3821B1FI3|safarov_nurlan|0.1550|
 |3821B1FI2|nogin_denis|0.1562|
 |3821B1FI1|bozin_dmitry|0.1573|
 |3821B1FI3|sharapov_georgiy|0.1574|
@@ -1195,6 +1195,7 @@ std::vector<float> GeluOCL(const std::vector<float>& input) {
 |3821B1PE2|platonova_maria|0.2947|
 |3821B1PE1|vinichuk_timofey|0.2951|
 |3821B1FI2|petrov_maksim|0.2958|
+|3821B1PE1|fedotov_kirill|0.2958|
 |3821B1PE3|smirnov_pavel|0.2974|
 |3821B1PE1|smirnov_leonid|0.2976|
 |3821B1PE2|bakhtiarov_alexander|0.2989|
@@ -1304,7 +1305,7 @@ Passed: 21
 |-----|----|------|
 |3821B1PE1|afanasyev_aleksey|**9/9**|
 |3821B1PE1|chuvashov_andrey|**9/9**|
-|3821B1PE1|fedotov_kirill|8/9|
+|3821B1PE1|fedotov_kirill|**9/9**|
 |3821B1PE1|kashin_stepan|**9/9**|
 |3821B1PE1|khodyrev_fedor|**9/9**|
 |3821B1PE1|khramov_ivan|**9/9**|
@@ -1326,7 +1327,7 @@ Passed: 21
 |3821B1PE1|vinichuk_timofey|**9/9**|
 |3821B1PE1|yurin_andrey|**9/9**|
 
-Passed: 21
+Passed: 22
 
 ## 3821B1PE2
 |Group|Name|Passed|
@@ -1363,4 +1364,4 @@ Passed: 15
 
 Passed: 5
 
-**Total Passed: 84**
+**Total Passed: 85**
