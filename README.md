@@ -466,6 +466,7 @@ std::vector<float> GeluOCL(const std::vector<float>& input) {
 |3821B1FI3|kulaev_zhenya|0.7553|
 |3821B1FI1|mirzakhmedov_alexander|0.7631|
 |3821B1FI3|prokofev_kirill|0.7670|
+|3821B1PE1|kolosova_alena|0.7687|
 |3821B1FI3|ryabkov_vladislav|0.7706|
 |3821B1FI3|tyulkina_olga|0.7711|
 |3821B1PE1|smirnov_leonid|0.7726|
@@ -487,7 +488,6 @@ std::vector<float> GeluOCL(const std::vector<float>& input) {
 |3821B1FI1|pushkarev_ilya|0.8219|
 |3821B1PE3|smirnov_pavel|1.4899|
 |3821B1PE1|vanushkin_dmitry|1.5001|
-|3821B1PE1|kolosova_alena|TEST FAILED|
 
 ## 2_gelu_cuda (134217728 elements)
 |Group|Name|Result|
@@ -1320,7 +1320,7 @@ Passed: 21
 |3821B1PE1|khramov_ivan|**9/9**|
 |3821B1PE1|kirillov_maxim|**9/9**|
 |3821B1PE1|kiselev_igor|**9/9**|
-|3821B1PE1|kolosova_alena|8/9|
+|3821B1PE1|kolosova_alena|**9/9**|
 |3821B1PE1|kriseev_mikhail|**9/9**|
 |3821B1PE1|kudinov_nikita|**9/9**|
 |3821B1PE1|moiseev_nikita|**9/9**|
@@ -1337,7 +1337,7 @@ Passed: 21
 |3821B1PE1|vinichuk_timofey|**9/9**|
 |3821B1PE1|yurin_andrey|**9/9**|
 
-Passed: 22
+Passed: 23
 
 ## 3821B1PE2
 |Group|Name|Passed|
@@ -1374,4 +1374,4 @@ Passed: 15
 
 Passed: 5
 
-**Total Passed: 85**
+**Total Passed: 86**
