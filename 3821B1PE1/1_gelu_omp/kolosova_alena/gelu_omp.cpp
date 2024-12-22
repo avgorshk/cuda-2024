@@ -13,7 +13,7 @@ std::vector<float> GeluOMP(const std::vector<float>& input) {
 #pragma omp parallel for
     for (int i = 0; i < size; i++) {
         float x = input[i];
-        output[i] = 0.5f * x * (1.0f + tanh(geluConst1 * (x + geluConst2 * x * x * x)));
+        output[i] = 0.5f * x * (1.0f + tanh(geluConst2 * (x + geluConst1 * x * x * x)));
     }
 
     return output;
