@@ -592,6 +592,7 @@ std::vector<float> GeluOCL(const std::vector<float>& input) {
 |3821B1PE2|filatov_maxim|0.0968|
 |3821B1PE2|novostroev_ivan|0.0970|
 |3821B1FI1|shipitsin_alex|0.0973|
+|3821B1PE3|fedorets_ilya|0.0981|
 |3821B1PE2|dostavalov_semyon|0.0990|
 |3821B1PE2|gontsov_roman|0.0993|
 |3821B1PE2|nikitin_kirill|0.0999|
@@ -736,6 +737,7 @@ std::vector<float> GeluOCL(const std::vector<float>& input) {
 |3821B1PE1|kashin_stepan|0.3490|
 |3821B1PE1|kudinov_nikita|0.3502|
 |3821B1PE1|afanasyev_aleksey|0.3506|
+|3821B1PE3|fedorets_ilya|0.3535|
 |3821B1PE2|bakhtiarov_alexander|0.3567|
 |3821B1PE1|podyachikh_mikhail|0.3590|
 |3821B1PE2|gontsov_roman|0.3704|
@@ -849,6 +851,7 @@ std::vector<float> GeluOCL(const std::vector<float>& input) {
 |3821B1PE1|kashin_stepan|0.3548|
 |3821B1FI2|kazantsev_evgeny|0.3563|
 |3821B1PE2|dostavalov_semyon|0.3613|
+|3821B1PE3|fedorets_ilya|0.3637|
 |3821B1PE2|filatov_maxim|0.3649|
 |3821B1PE2|nikitin_kirill|0.3672|
 |3821B1PE1|kudinov_nikita|0.3714|
@@ -916,6 +919,7 @@ std::vector<float> GeluOCL(const std::vector<float>& input) {
 |3821B1FI3|volodin_evgeniy|0.2594|
 |3821B1FI2|kostin_artem|0.2782|
 |3821B1PE1|sokolova_daria|0.2839|
+|3821B1PE3|fedorets_ilya|0.2998|
 |3821B1PE3|Musaev_Ilgar|0.3034|
 |3821B1FI1|balyasov_ivan|0.3135|
 |3821B1FI2|kostanyan_arsen|0.3151|
@@ -1053,6 +1057,7 @@ std::vector<float> GeluOCL(const std::vector<float>& input) {
 |3821B1FI3|ulyanov_daniil|0.0837|
 |3821B1PE1|podyachikh_mikhail|0.0839|
 |3821B1FI3|safarov_nurlan|0.0863|
+|3821B1PE3|fedorets_ilya|0.0879|
 |3821B1FI2|petrov_maksim|0.0886|
 |3821B1PE2|filatov_maxim|0.0898|
 |3821B1FI3|volodin_evgeniy|0.0902|
@@ -1105,6 +1110,7 @@ std::vector<float> GeluOCL(const std::vector<float>& input) {
 |3821B1PE2|kistrimova_ekaterina|0.1475|
 |3821B1FI2|travin_maksim|0.1476|
 |3821B1PE1|kiselev_igor|0.1489|
+|3821B1PE3|fedorets_ilya|0.1502|
 |3821B1PE1|vinichuk_timofey|0.1517|
 |3821B1FI3|lebedeva_ksenia|0.1520|
 |3821B1FI3|ulyanov_daniil|0.1520|
@@ -1210,6 +1216,7 @@ std::vector<float> GeluOCL(const std::vector<float>& input) {
 |3821B1FI3|kulagin_aleksandr|0.2940|
 |3821B1FI1|shipitsin_alex|0.2946|
 |3821B1PE2|platonova_maria|0.2947|
+|3821B1PE3|fedorets_ilya|0.2948|
 |3821B1PE1|vinichuk_timofey|0.2951|
 |3821B1PE1|fedotov_kirill|0.2958|
 |3821B1FI2|petrov_maksim|0.2958|
@@ -1378,10 +1385,10 @@ Passed: 15
 |3821B1PE3|Kokin Ivan|1/9|
 |3821B1PE3|Kokin_Ivan|**9/9**|
 |3821B1PE3|Musaev_Ilgar|**9/9**|
-|3821B1PE3|fedorets_ilya|2/9|
+|3821B1PE3|fedorets_ilya|**9/9**|
 |3821B1PE3|nedelin_dmitry|**9/9**|
 |3821B1PE3|smirnov_pavel|**9/9**|
 
-Passed: 5
+Passed: 6
 
-**Total Passed: 87**
+**Total Passed: 88**
