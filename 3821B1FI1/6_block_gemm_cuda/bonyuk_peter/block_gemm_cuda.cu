@@ -1,65 +1,72 @@
 #include "block_gemm_cuda.h"
+
+#include <cuda.h>
 #include <cuda_runtime.h>
+
+#include <cstdlib>
 #include <vector>
 
-#define BLOCK_SIZE 16
+#define BLOCK_SIZE 32
 
-__global__ void blockGemmKernel(const float* a, const float* b, float* c, int n) {
-    __shared__ float sharedA[BLOCK_SIZE][BLOCK_SIZE];
-    __shared__ float sharedB[BLOCK_SIZE][BLOCK_SIZE];
+__global__ void myKernel(const float* a, const float* b,
+                         float* const c, const int size) {
+    __shared__ float aCached[BLOCK_SIZE][BLOCK_SIZE];
+    __shared__ float bCached[BLOCK_SIZE][BLOCK_SIZE];
 
-    int bx = blockIdx.x;
-    int by = blockIdx.y;
-    int tx = threadIdx.x;
-    int ty = threadIdx.y;
+    const int tx = threadIdx.x;
+    const int ty = threadIdx.y;
 
-    int row = by * BLOCK_SIZE + ty;
-    int col = bx * BLOCK_SIZE + tx;
+    const int nIdx = blockIdx.y * BLOCK_SIZE + ty;
+    const int mIdx = blockIdx.x * BLOCK_SIZE + tx;
 
-    float sum = 0.0f;
+    float cVal = 0.0f;
 
-    for (int m = 0; m < (n / BLOCK_SIZE); ++m) {
-        sharedA[ty][tx] = a[row * n + m * BLOCK_SIZE + tx];
-        sharedB[ty][tx] = b[(m * BLOCK_SIZE + ty) * n + col];
+    for (int t = 0; t < size / BLOCK_SIZE; ++t) {
+        aCached[ty][tx] = a[nIdx * size + t * BLOCK_SIZE + tx];
+        bCached[ty][tx] = b[(t * BLOCK_SIZE + ty) * size + mIdx];
 
         __syncthreads();
-
         for (int k = 0; k < BLOCK_SIZE; ++k) {
-            sum += sharedA[ty][k] * sharedB[k][tx];
+            cVal += aCached[ty][k] * bCached[k][tx];
         }
-
         __syncthreads();
     }
 
-    c[row * n + col] = sum;
+    if (nIdx < size && mIdx < size) {
+        c[nIdx * size + mIdx] = cVal;
+    }
 }
 
 std::vector<float> BlockGemmCUDA(const std::vector<float>& a,
-                                 const std::vector<float>& b,
-                                 int n) {
-    std::vector<float> c(n * n, 0.0f);
+                                 const std::vector<float>& b, int size) {
+    std::vector<float> c(size * size);
+
+    size_t sizeInBytes = size * size * sizeof(*a.data());
 
     float* d_a;
+    cudaMalloc(&d_a, sizeInBytes);
     float* d_b;
+    cudaMalloc(&d_b, sizeInBytes);
     float* d_c;
+    cudaMalloc(&d_c, sizeInBytes);
 
-    cudaMalloc(&d_a, n * n * sizeof(float));
-    cudaMalloc(&d_b, n * n * sizeof(float));
-    cudaMalloc(&d_c, n * n * sizeof(float));
+    cudaMemcpy(d_a, a.data(), sizeInBytes, cudaMemcpyHostToDevice);
+    cudaMemcpy(d_b, b.data(), sizeInBytes, cudaMemcpyHostToDevice);
 
-    cudaMemcpy(d_a, a.data(), n * n * sizeof(float), cudaMemcpyHostToDevice);
-    cudaMemcpy(d_b, b.data(), n * n * sizeof(float), cudaMemcpyHostToDevice);
+    const int sizeAxis = BLOCK_SIZE;
+    dim3 threadsPerBlock(
+        sizeAxis,
+        sizeAxis);
+    dim3 numBlocks(
+        (size + sizeAxis - 1) / sizeAxis,
+        (size + sizeAxis - 1) / sizeAxis);
 
-    dim3 dimBlock(BLOCK_SIZE, BLOCK_SIZE);
-    dim3 dimGrid((n + BLOCK_SIZE - 1) / BLOCK_SIZE, (n + BLOCK_SIZE - 1) / BLOCK_SIZE);
+    myKernel<<<numBlocks, threadsPerBlock>>>(d_a, d_b, d_c, size);
 
-    blockGemmKernel<<<dimGrid, dimBlock>>>(d_a, d_b, d_c, n);
-
-    cudaMemcpy(c.data(), d_c, n * n * sizeof(float), cudaMemcpyDeviceToHost);
+    cudaMemcpy(c.data(), d_c, sizeInBytes, cudaMemcpyDeviceToHost);
 
     cudaFree(d_a);
     cudaFree(d_b);
     cudaFree(d_c);
-
     return c;
 }
