@@ -5,6 +5,7 @@ The output values ​​were:
 1 0 2 0 3 0 4 0 
 */
 
+
 #include "fft_cufft.h"
 #include <cufft.h>
 #include <iostream>
@@ -12,31 +13,31 @@ The output values ​​were:
 std::vector<float> FffCUFFT(const std::vector<float>& input, int batch) {
     int n = input.size() / (2 * batch);
 
-    cufftComplex* d_input;
-    cufftComplex* d_output;
+    cufftComplex* dIn;
+    cufftComplex* dOut;
     std::vector<float> output(2 * n * batch);
 
-    cudaMalloc((void**)&d_input, sizeof(cufftComplex) * n * batch);
-    cudaMalloc((void**)&d_output, sizeof(cufftComplex) * n * batch);
+    cudaMalloc((void**)&dIn, sizeof(cufftComplex) * n * batch);
+    cudaMalloc((void**)&dOut, sizeof(cufftComplex) * n * batch);
 
-    cudaMemcpy(d_input, input.data(), sizeof(float) * input.size(), cudaMemcpyHostToDevice);
+    cudaMemcpy(dIn, input.data(), sizeof(float) * input.size(), cudaMemcpyHostToDevice);
 
     cufftHandle plan;
     cufftPlan1d(&plan, n, CUFFT_C2C, batch);
 
-    cufftExecC2C(plan, d_input, d_output, CUFFT_FORWARD);
+    cufftExecC2C(plan, dIn, dOut, CUFFT_FORWARD);
 
-    cufftExecC2C(plan, d_output, d_input, CUFFT_INVERSE);
+    cufftExecC2C(plan, dOut, dIn, CUFFT_INVERSE);
 
     float normalizationFactor = 1.0f / n;
-    cudaMemcpy(output.data(), d_input, sizeof(float) * output.size(), cudaMemcpyDeviceToHost);
+    cudaMemcpy(output.data(), dIn, sizeof(float) * output.size(), cudaMemcpyDeviceToHost);
     for (int i = 0; i < output.size(); ++i) {
         output[i] *= normalizationFactor;
     }
 
     cufftDestroy(plan);
-    cudaFree(d_input);
-    cudaFree(d_output);
+    cudaFree(dIn);
+    cudaFree(dOut);
 
     return output;
 }
