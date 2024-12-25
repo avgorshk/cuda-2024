@@ -1,9 +1,3 @@
-﻿﻿/*When entering the following vector:
-std::vector<float> input = {1.0, 2.0, 3.0, 4.0, 5.0};
-The output values ​​were:
-0.841192 1.9546 2.99636 3.99993 5
-*/
-
 #include "gelu_ocl.h"
 
 #include <CL/opencl.hpp>
@@ -12,17 +6,6 @@ The output values ​​were:
 #include <utility>
 
 std::vector<float> GeluOCL(const std::vector<float>& input) {
-	std::string kernelCode = R"(
-__kernel void myKernel(__global const float* input, __global float* output, int size) {
-    int i = get_global_id(0);
-
-    if (i < size) {
-        const float x = input[i];
-        output[i] = x / (1.0f + exp(-1.59577f * (x + 0.044715f * x * x * x)));
-    }
-}
-)";
-
 	std::vector<cl::Platform> platforms;
 	cl::Platform::get(&platforms);
 
@@ -35,8 +18,19 @@ __kernel void myKernel(__global const float* input, __global float* output, int 
 	cl::Context context(device);
 	cl::CommandQueue queue(context);
 
+	std::string kernCode = R"(
+__kernel void myKernel(__global const float* input, __global float* output, int size) {
+    int i = get_global_id(0);
+
+    if (i < size) {
+        const float x = input[i];
+        output[i] = x / (1.0f + exp(-1.59577f * (x + 0.044715f * x * x * x)));
+    }
+}
+)";
+
 	cl::Program::Sources sources;
-	sources.emplace_back(std::move(kernelCode));
+	sources.emplace_back(std::move(kernCode));
 
 	cl::Program program(context, sources);
 	program.build();
@@ -49,16 +43,20 @@ __kernel void myKernel(__global const float* input, __global float* output, int 
 	cl::Buffer bufferInput(context, CL_MEM_READ_ONLY, sizeInBytes);
 	cl::Buffer bufferOutput(context, CL_MEM_WRITE_ONLY, sizeInBytes);
 
-	queue.enqueueWriteBuffer(bufferInput, CL_TRUE, 0, sizeInBytes, input.data());
+	queue.enqueueWriteBuffer(bufferInput, CL_TRUE,
+		0, sizeInBytes,
+		input.data());
 
 	kernel.setArg(0, bufferInput);
 	kernel.setArg(1, bufferOutput);
 	kernel.setArg(2, static_cast<int>(size));
-	queue.enqueueNDRangeKernel(kernel, cl::NullRange, cl::NDRange(size),
-		cl::NullRange);
+	queue.enqueueNDRangeKernel(kernel,
+		cl::NullRange, cl::NDRange(size), cl::NullRange);
 
 	std::vector<float> output(size);
-	queue.enqueueReadBuffer(bufferOutput, CL_TRUE, 0, sizeInBytes, output.data());
+	queue.enqueueReadBuffer(bufferOutput, CL_TRUE,
+		0, sizeInBytes,
+		output.data());
 
 	return output;
 }
