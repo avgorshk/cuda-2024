@@ -4,7 +4,7 @@
 In file included from /usr/include/c++/11/bits/stl_algobase.h:62,
                  from /usr/include/c++/11/vector:60,
                  from /home/crazyproger/sandbox/cuda-2024/3821B1FI1/9_gelu_ocl/bonyuk_peter/gelu_ocl.h:4,
-                 from /home/crazyproger/sandbox/cuda-2024/3821B1FI1/9_gelu_ocl/bonyuk_peter/gelu_ocl.cpp:8:
+                 from /home/crazyproger/sandbox/cuda-2024/3821B1FI1/9_gelu_ocl/bonyuk_peter/gelu_ocl.cpp:7:
 /usr/include/c++/11/ext/type_traits.h:162:35: error: ‘bool __gnu_cxx::__is_null_pointer’ redeclared as different kind of entity
   162 |   __is_null_pointer(std::nullptr_t)
       |                                   ^
@@ -19,7 +19,7 @@ In file included from /usr/include/c++/11/bits/move.h:57,
                  from /usr/include/c++/11/bits/stl_algobase.h:64,
                  from /usr/include/c++/11/vector:60,
                  from /home/crazyproger/sandbox/cuda-2024/3821B1FI1/9_gelu_ocl/bonyuk_peter/gelu_ocl.h:4,
-                 from /home/crazyproger/sandbox/cuda-2024/3821B1FI1/9_gelu_ocl/bonyuk_peter/gelu_ocl.cpp:8:
+                 from /home/crazyproger/sandbox/cuda-2024/3821B1FI1/9_gelu_ocl/bonyuk_peter/gelu_ocl.cpp:7:
 /usr/include/c++/11/type_traits:227:27: error: ‘size_t’ has not been declared
   227 |   template <typename _Tp, size_t = sizeof(_Tp)>
       |                           ^~~~~~
@@ -116,7 +116,7 @@ In file included from /usr/include/c++/11/bits/move.h:57,
                  from /usr/include/c++/11/bits/stl_algobase.h:64,
                  from /usr/include/c++/11/vector:60,
                  from /home/crazyproger/sandbox/cuda-2024/3821B1FI1/9_gelu_ocl/bonyuk_peter/gelu_ocl.h:4,
-                 from /home/crazyproger/sandbox/cuda-2024/3821B1FI1/9_gelu_ocl/bonyuk_peter/gelu_ocl.cpp:8:
+                 from /home/crazyproger/sandbox/cuda-2024/3821B1FI1/9_gelu_ocl/bonyuk_peter/gelu_ocl.cpp:7:
 /usr/include/c++/11/type_traits:1:1: note: ‘size_t’ is defined in header ‘<cstddef>’; did you forget to ‘#include <cstddef>’?
   +++ |+#include <cstddef>
     1 | // C++11 <type_traits> -*- C++ -*-
@@ -125,7 +125,7 @@ In file included from /usr/include/c++/11/bits/move.h:57,
                  from /usr/include/c++/11/bits/stl_algobase.h:64,
                  from /usr/include/c++/11/vector:60,
                  from /home/crazyproger/sandbox/cuda-2024/3821B1FI1/9_gelu_ocl/bonyuk_peter/gelu_ocl.h:4,
-                 from /home/crazyproger/sandbox/cuda-2024/3821B1FI1/9_gelu_ocl/bonyuk_peter/gelu_ocl.cpp:8:
+                 from /home/crazyproger/sandbox/cuda-2024/3821B1FI1/9_gelu_ocl/bonyuk_peter/gelu_ocl.cpp:7:
 /usr/include/c++/11/type_traits:1761:14: error: ‘size_t’ has not been declared
  1761 |     template<size_t _Sz, typename _Tp, bool = (_Sz <= _Tp::__size)>
       |              ^~~~~~
@@ -380,7 +380,7 @@ In file included from /usr/include/c++/11/bits/stl_pair.h:59,
                  from /usr/include/c++/11/bits/stl_algobase.h:64,
                  from /usr/include/c++/11/vector:60,
                  from /home/crazyproger/sandbox/cuda-2024/3821B1FI1/9_gelu_ocl/bonyuk_peter/gelu_ocl.h:4,
-                 from /home/crazyproger/sandbox/cuda-2024/3821B1FI1/9_gelu_ocl/bonyuk_peter/gelu_ocl.cpp:8:
+                 from /home/crazyproger/sandbox/cuda-2024/3821B1FI1/9_gelu_ocl/bonyuk_peter/gelu_ocl.cpp:7:
 /usr/include/c++/11/bits/move.h:212:26: error: ‘size_t’ has not been declared
   212 |   template<typename _Tp, size_t _Nm>
       |                          ^~~~~~
@@ -412,7 +412,7 @@ In file included from /usr/include/c++/11/bits/stl_pair.h:59,
 In file included from /usr/include/c++/11/bits/stl_algobase.h:64,
                  from /usr/include/c++/11/vector:60,
                  from /home/crazyproger/sandbox/cuda-2024/3821B1FI1/9_gelu_ocl/bonyuk_peter/gelu_ocl.h:4,
-                 from /home/crazyproger/sandbox/cuda-2024/3821B1FI1/9_gelu_ocl/bonyuk_peter/gelu_ocl.cpp:8:
+                 from /home/crazyproger/sandbox/cuda-2024/3821B1FI1/9_gelu_ocl/bonyuk_peter/gelu_ocl.cpp:7:
 /usr/include/c++/11/bits/stl_pair.h:92:12: error: ‘size_t’ has not been declared
    92 |   template<size_t...>
       |            ^~~~~~
@@ -443,21 +443,21 @@ In file included from /usr/include/c++/11/bits/stl_algobase.h:64,
 In file included from /usr/include/c++/11/bits/stl_algobase.h:65,
                  from /usr/include/c++/11/vector:60,
                  from /home/crazyproger/sandbox/cuda-2024/3821B1FI1/9_gelu_ocl/bonyuk_peter/gelu_ocl.h:4,
-                 from /home/crazyproger/sandbox/cuda-2024/3821B1FI1/9_gelu_ocl/bonyuk_peter/gelu_ocl.cpp:8:
+                 from /home/crazyproger/sandbox/cuda-2024/3821B1FI1/9_gelu_ocl/bonyuk_peter/gelu_ocl.cpp:7:
 /usr/include/c++/11/bits/stl_iterator_base_types.h:125:67: error: ‘ptrdiff_t’ does not name a type
   125 |   template<typename _Category, typename _Tp, typename _Distance = ptrdiff_t,
       |                                                                   ^~~~~~~~~
 In file included from /usr/include/c++/11/bits/stl_algobase.h:65,
                  from /usr/include/c++/11/vector:60,
                  from /home/crazyproger/sandbox/cuda-2024/3821B1FI1/9_gelu_ocl/bonyuk_peter/gelu_ocl.h:4,
-                 from /home/crazyproger/sandbox/cuda-2024/3821B1FI1/9_gelu_ocl/bonyuk_peter/gelu_ocl.cpp:8:
+                 from /home/crazyproger/sandbox/cuda-2024/3821B1FI1/9_gelu_ocl/bonyuk_peter/gelu_ocl.cpp:7:
 /usr/include/c++/11/bits/stl_iterator_base_types.h:1:1: note: ‘ptrdiff_t’ is defined in header ‘<cstddef>’; did you forget to ‘#include <cstddef>’?
   +++ |+#include <cstddef>
     1 | // Types used in iterator implementation -*- C++ -*-
 In file included from /usr/include/c++/11/bits/stl_algobase.h:65,
                  from /usr/include/c++/11/vector:60,
                  from /home/crazyproger/sandbox/cuda-2024/3821B1FI1/9_gelu_ocl/bonyuk_peter/gelu_ocl.h:4,
-                 from /home/crazyproger/sandbox/cuda-2024/3821B1FI1/9_gelu_ocl/bonyuk_peter/gelu_ocl.cpp:8:
+                 from /home/crazyproger/sandbox/cuda-2024/3821B1FI1/9_gelu_ocl/bonyuk_peter/gelu_ocl.cpp:7:
 /usr/include/c++/11/bits/stl_iterator_base_types.h:214:15: error: ‘ptrdiff_t’ does not name a type
   214 |       typedef ptrdiff_t                   difference_type;
       |               ^~~~~~~~~
@@ -469,7 +469,7 @@ In file included from /usr/include/c++/11/bits/stl_algobase.h:65,
 In file included from /usr/include/c++/11/bits/stl_algobase.h:66,
                  from /usr/include/c++/11/vector:60,
                  from /home/crazyproger/sandbox/cuda-2024/3821B1FI1/9_gelu_ocl/bonyuk_peter/gelu_ocl.h:4,
-                 from /home/crazyproger/sandbox/cuda-2024/3821B1FI1/9_gelu_ocl/bonyuk_peter/gelu_ocl.cpp:8:
+                 from /home/crazyproger/sandbox/cuda-2024/3821B1FI1/9_gelu_ocl/bonyuk_peter/gelu_ocl.cpp:7:
 /usr/include/c++/11/bits/stl_iterator_base_funcs.h:110:5: error: ‘ptrdiff_t’ does not name a type
   110 |     ptrdiff_t
       |     ^~~~~~~~~
@@ -485,7 +485,7 @@ In file included from /usr/include/c++/11/bits/stl_iterator.h:67,
                  from /usr/include/c++/11/bits/stl_algobase.h:67,
                  from /usr/include/c++/11/vector:60,
                  from /home/crazyproger/sandbox/cuda-2024/3821B1FI1/9_gelu_ocl/bonyuk_peter/gelu_ocl.h:4,
-                 from /home/crazyproger/sandbox/cuda-2024/3821B1FI1/9_gelu_ocl/bonyuk_peter/gelu_ocl.cpp:8:
+                 from /home/crazyproger/sandbox/cuda-2024/3821B1FI1/9_gelu_ocl/bonyuk_peter/gelu_ocl.cpp:7:
 /usr/include/c++/11/bits/ptr_traits.h:119:27: error: ‘ptrdiff_t’ was not declared in this scope
   119 |         = __detected_or_t<ptrdiff_t, __difference_type, _Ptr>;
       |                           ^~~~~~~~~
@@ -501,7 +501,7 @@ In file included from /usr/include/c++/11/bits/stl_iterator.h:67,
 /usr/include/c++/11/bits/ptr_traits.h:138:15: note: ‘ptrdiff_t’ is defined in header ‘<cstddef>’; did you forget to ‘#include <cstddef>’?
 In file included from /usr/include/c++/11/vector:60,
                  from /home/crazyproger/sandbox/cuda-2024/3821B1FI1/9_gelu_ocl/bonyuk_peter/gelu_ocl.h:4,
-                 from /home/crazyproger/sandbox/cuda-2024/3821B1FI1/9_gelu_ocl/bonyuk_peter/gelu_ocl.cpp:8:
+                 from /home/crazyproger/sandbox/cuda-2024/3821B1FI1/9_gelu_ocl/bonyuk_peter/gelu_ocl.cpp:7:
 /usr/include/c++/11/bits/stl_algobase.h:90:56: error: ‘size_t’ has not been declared
    90 |     __memcmp(const _Tp* __first1, const _Up* __first2, size_t __num)
       |                                                        ^~~~~~
@@ -562,7 +562,7 @@ In file included from /usr/include/c++/11/ext/new_allocator.h:33,
                  from /usr/include/c++/11/bits/allocator.h:46,
                  from /usr/include/c++/11/vector:64,
                  from /home/crazyproger/sandbox/cuda-2024/3821B1FI1/9_gelu_ocl/bonyuk_peter/gelu_ocl.h:4,
-                 from /home/crazyproger/sandbox/cuda-2024/3821B1FI1/9_gelu_ocl/bonyuk_peter/gelu_ocl.cpp:8:
+                 from /home/crazyproger/sandbox/cuda-2024/3821B1FI1/9_gelu_ocl/bonyuk_peter/gelu_ocl.cpp:7:
 /usr/include/c++/11/new:89:25: error: found ‘:’ in nested-name-specifier, expected ‘::’
    89 |   enum class align_val_t: size_t {};
       |                         ^
@@ -691,7 +691,7 @@ In file included from /usr/include/x86_64-linux-gnu/c++/11/bits/c++allocator.h:3
                  from /usr/include/c++/11/bits/allocator.h:46,
                  from /usr/include/c++/11/vector:64,
                  from /home/crazyproger/sandbox/cuda-2024/3821B1FI1/9_gelu_ocl/bonyuk_peter/gelu_ocl.h:4,
-                 from /home/crazyproger/sandbox/cuda-2024/3821B1FI1/9_gelu_ocl/bonyuk_peter/gelu_ocl.cpp:8:
+                 from /home/crazyproger/sandbox/cuda-2024/3821B1FI1/9_gelu_ocl/bonyuk_peter/gelu_ocl.cpp:7:
 /usr/include/c++/11/ext/new_allocator.h:59:20: error: ‘size_t’ in namespace ‘std’ does not name a type
    59 |       typedef std::size_t     size_type;
       |                    ^~~~~~
@@ -716,7 +716,7 @@ In file included from /usr/include/x86_64-linux-gnu/c++/11/bits/c++allocator.h:3
       |                             ^~~~~~
 In file included from /usr/include/c++/11/vector:64,
                  from /home/crazyproger/sandbox/cuda-2024/3821B1FI1/9_gelu_ocl/bonyuk_peter/gelu_ocl.h:4,
-                 from /home/crazyproger/sandbox/cuda-2024/3821B1FI1/9_gelu_ocl/bonyuk_peter/gelu_ocl.cpp:8:
+                 from /home/crazyproger/sandbox/cuda-2024/3821B1FI1/9_gelu_ocl/bonyuk_peter/gelu_ocl.cpp:7:
 /usr/include/c++/11/bits/allocator.h: At global scope:
 /usr/include/c++/11/bits/allocator.h:76:15: error: ‘size_t’ does not name a type
    76 |       typedef size_t      size_type;
@@ -741,7 +741,7 @@ In file included from /usr/include/c++/11/ext/alloc_traits.h:34,
                  from /usr/include/c++/11/bits/stl_uninitialized.h:64,
                  from /usr/include/c++/11/vector:66,
                  from /home/crazyproger/sandbox/cuda-2024/3821B1FI1/9_gelu_ocl/bonyuk_peter/gelu_ocl.h:4,
-                 from /home/crazyproger/sandbox/cuda-2024/3821B1FI1/9_gelu_ocl/bonyuk_peter/gelu_ocl.cpp:8:
+                 from /home/crazyproger/sandbox/cuda-2024/3821B1FI1/9_gelu_ocl/bonyuk_peter/gelu_ocl.cpp:7:
 /usr/include/c++/11/bits/alloc_traits.h:432:36: error: ‘ptrdiff_t’ in namespace ‘std’ does not name a type
   432 |       using difference_type = std::ptrdiff_t;
       |                                    ^~~~~~~~~
@@ -789,7 +789,7 @@ In file included from /usr/include/c++/11/ext/alloc_traits.h:34,
 /usr/include/c++/11/bits/alloc_traits.h:803:58: note: ‘size_t’ is defined in header ‘<cstddef>’; did you forget to ‘#include <cstddef>’?
 In file included from /usr/include/c++/11/vector:66,
                  from /home/crazyproger/sandbox/cuda-2024/3821B1FI1/9_gelu_ocl/bonyuk_peter/gelu_ocl.h:4,
-                 from /home/crazyproger/sandbox/cuda-2024/3821B1FI1/9_gelu_ocl/bonyuk_peter/gelu_ocl.cpp:8:
+                 from /home/crazyproger/sandbox/cuda-2024/3821B1FI1/9_gelu_ocl/bonyuk_peter/gelu_ocl.cpp:7:
 /usr/include/c++/11/bits/stl_uninitialized.h: In function ‘std::__enable_if_t<std::__is_bitwise_relocatable<_Tp>::value, _Tp*> std::__relocate_a_1(_Tp*, _Tp*, _Tp*, std::allocator<_T2>&)’:
 /usr/include/c++/11/bits/stl_uninitialized.h:1009:7: error: ‘ptrdiff_t’ was not declared in this scope
  1009 |       ptrdiff_t __count = __last - __first;
@@ -809,7 +809,7 @@ In file included from /usr/include/c++/11/vector:66,
 In file included from /usr/include/c++/11/bits/stl_vector.h:63,
                  from /usr/include/c++/11/vector:67,
                  from /home/crazyproger/sandbox/cuda-2024/3821B1FI1/9_gelu_ocl/bonyuk_peter/gelu_ocl.h:4,
-                 from /home/crazyproger/sandbox/cuda-2024/3821B1FI1/9_gelu_ocl/bonyuk_peter/gelu_ocl.cpp:8:
+                 from /home/crazyproger/sandbox/cuda-2024/3821B1FI1/9_gelu_ocl/bonyuk_peter/gelu_ocl.cpp:7:
 /usr/include/c++/11/initializer_list: At global scope:
 /usr/include/c++/11/initializer_list:53:15: error: ‘size_t’ does not name a type
    53 |       typedef size_t            size_type;
@@ -817,14 +817,14 @@ In file included from /usr/include/c++/11/bits/stl_vector.h:63,
 In file included from /usr/include/c++/11/bits/stl_vector.h:63,
                  from /usr/include/c++/11/vector:67,
                  from /home/crazyproger/sandbox/cuda-2024/3821B1FI1/9_gelu_ocl/bonyuk_peter/gelu_ocl.h:4,
-                 from /home/crazyproger/sandbox/cuda-2024/3821B1FI1/9_gelu_ocl/bonyuk_peter/gelu_ocl.cpp:8:
+                 from /home/crazyproger/sandbox/cuda-2024/3821B1FI1/9_gelu_ocl/bonyuk_peter/gelu_ocl.cpp:7:
 /usr/include/c++/11/initializer_list:1:1: note: ‘size_t’ is defined in header ‘<cstddef>’; did you forget to ‘#include <cstddef>’?
   +++ |+#include <cstddef>
     1 | // std::initializer_list support -*- C++ -*-
 In file included from /usr/include/c++/11/bits/stl_vector.h:63,
                  from /usr/include/c++/11/vector:67,
                  from /home/crazyproger/sandbox/cuda-2024/3821B1FI1/9_gelu_ocl/bonyuk_peter/gelu_ocl.h:4,
-                 from /home/crazyproger/sandbox/cuda-2024/3821B1FI1/9_gelu_ocl/bonyuk_peter/gelu_ocl.cpp:8:
+                 from /home/crazyproger/sandbox/cuda-2024/3821B1FI1/9_gelu_ocl/bonyuk_peter/gelu_ocl.cpp:7:
 /usr/include/c++/11/initializer_list:59:7: error: ‘size_type’ does not name a type; did you mean ‘true_type’?
    59 |       size_type                 _M_len;
       |       ^~~~~~~~~
