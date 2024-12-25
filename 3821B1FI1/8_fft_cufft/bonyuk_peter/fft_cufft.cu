@@ -10,7 +10,7 @@ The output values ​​were:
 #include <cufft.h>
 #include <iostream>
 
-std::vector<float> FftCUFFT(const std::vector<float>& input, int batch) {
+std::vector<float> FffCUFFT(const std::vector<float>& input, int batch) {
     int n = input.size() / (2 * batch);
 
     cufftComplex* dIn;
